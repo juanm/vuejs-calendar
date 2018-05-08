@@ -11,7 +11,6 @@
     </div>
     <div id="calendar">
       <div v-for="week in weeks" class="calendar-week">
-
         <calendar-day v-for="day in week" :day="day"></calendar-day>
       </div>
     </div>
@@ -24,7 +23,7 @@
     data() {
       return {
         //msg: 'hello world'
-        month: 1,
+        month: 5,
         year: 2018
       };
     },
