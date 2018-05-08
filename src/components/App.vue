@@ -1,5 +1,13 @@
 <template>
   <div>
+    <div id="header">
+      <div>
+        <h1> My Calendar</h1>
+      </div>
+      <div>
+        <current-month></current-month>
+      </div>
+    </div>
     <div id="day-bar">
       <div>Mon</div>
       <div>Tue</div>
@@ -19,15 +27,17 @@
 
 <script>
   import CalendarDay from './CalendarDay.vue';
+  import CurrentMonth from './CurrentMonth.vue';
+
   export default {
-    data() {
-      return {
-        //msg: 'hello world'
-        month: 5,
-        year: 2018
-      };
-    },
+
     computed: {
+      month () {
+        return this.$store.state.currentMonth;
+      },
+      year () {
+        return this.$store.state.currentYear;
+      },
       days() {
         // Generating all days in currentmonth
         let days = [];
@@ -81,6 +91,7 @@
     },
     components: {
       CalendarDay,
+      CurrentMonth
     }
 }
 </script>
