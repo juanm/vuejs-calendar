@@ -27,6 +27,7 @@
         } else {
           this.$store.commit('setCurrentMonth', this.month + 1);
         }
+        this.$store.commit('eventFormActive', false);
       },
       dec() {
         console.log('dc');
@@ -36,6 +37,7 @@
         } else {
           this.$store.commit('setCurrentMonth', this.month - 1);
         }
+        this.$store.commit('eventFormActive', false);
       }
     }
   }

@@ -1,6 +1,7 @@
 <template>
   <div id="event-form" :class="{ active: active }" :style="{ top: top, left: left }">
     <h4>Add Event</h4>
+    <p>{{ date }}</p>
     <div class="text">
         <input v-focus type="text" v-model="description" placeholder="Dinner Plans?" @keyup.enter="create">
       <div class="buttons">
@@ -27,6 +28,9 @@
       },
       active() {
         return this.$store.state.eventFormActive;
+      },
+      date() {
+        return this.$store.state.eventFormDate.format('dddd, MMM Do');
       }
     },
     directives: {
